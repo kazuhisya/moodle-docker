@@ -20,9 +20,9 @@ services:
       MOODLE_SITENAME: "TestMoodle"                # site name
       MOODLE_SITESHORT: "TestMoodl"                # site short name
     ports:
-        - 8080:80
+      - 8080:80
     volumes:
-        - .data/moodledata:/var/www/moodledata
+      - .data/moodledata:/var/www/moodledata
 
   moodle_db:
     image: postgres:alpine
@@ -33,6 +33,6 @@ services:
       PGDATA: /var/lib/postgresql/data/pgdata
       POSTGRES_DB: moodle
     ports:
-        - 5432:5432
+      - 5432:5432
     volumes:
-        - .data/moodledb:/var/lib/postgresql
+      - .data/moodledb:/var/lib/postgresql
