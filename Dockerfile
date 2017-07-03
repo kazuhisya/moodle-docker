@@ -19,8 +19,6 @@ RUN curl -OL https://download.moodle.org/download.php/direct/${MOODLE_VERSION}/m
 
 COPY config.php /var/www/html/moodle/config.php
 RUN mkdir -p /var/www/moodledata && \
-    chown -R www-data.www-data /var/www/moodledata && \
-    chown -R www-data.www-data /var/www/html/moodle && \
     echo "date.timezone = '${TZ}'\n" > /usr/local/etc/php/conf.d/timezone.ini
 
 COPY start.sh /root/start.sh
