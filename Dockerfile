@@ -13,7 +13,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www/html
-RUN curl -OL https://download.moodle.org/download.php/direct/${MOODLE_VERSION}/moodle-${MOODLE_TAG}.tgz && \
+RUN curl -OL https://download.moodle.org/${MOODLE_VERSION}/moodle-${MOODLE_TAG}.tgz && \
     tar xf moodle-${MOODLE_TAG}.tgz && \
     rm -rf moodle-${MOODLE_TAG}.tgz
 
