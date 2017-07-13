@@ -1,3 +1,9 @@
 # ignore
 .data*
 tmp*
+*.patch
+.*
+*.orig
+*.rej
+*~
+*.log
