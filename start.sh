@@ -8,7 +8,7 @@ if [ ! -e /tmp/.db-setup ]; then
     done
 
     echo "Start first setup"
-    /usr/local/bin/php  /var/www/html/moodle/admin/cli/install_database.php \
+    /usr/bin/php5  /var/www/localhost/htdocs/moodle/admin/cli/install_database.php \
         --agree-license \
         --adminuser="${MOODLE_ADMINUSR}" \
         --adminpass="${MOODLE_ADMINPWD}" \
@@ -16,12 +16,13 @@ if [ ! -e /tmp/.db-setup ]; then
         --fullname="${MOODLE_SITENAME}" \
         --shortname="${MOODLE_SITESHORT}" \
         --lang="${MOODLE_LANG}"
-    chown -R www-data.www-data /var/www/moodledata
-    chown -R www-data.www-data /var/www/html/moodle
+    chown -R apache.apache /var/www/moodledata
+    chown -R apache.apache /var/www/localhost/htdocs/moodle
     echo "Admin account: ${MOODLE_ADMINUSR}/${MOODLE_ADMINPWD}"
 
     touch /tmp/.db-setup
     echo "first setup done."
 fi
 
-apache2-foreground
+mkdir -p /run/apache2
+httpd -D FOREGROUND
