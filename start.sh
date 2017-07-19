@@ -8,7 +8,7 @@ if [ ! -e /tmp/.db-setup ]; then
     done
 
     echo "Start first setup"
-    /usr/bin/php5  /var/www/localhost/htdocs/moodle/admin/cli/install_database.php \
+    /usr/bin/php  /var/www/localhost/htdocs/moodle/admin/cli/install_database.php \
         --agree-license \
         --adminuser="${MOODLE_ADMINUSR}" \
         --adminpass="${MOODLE_ADMINPWD}" \
