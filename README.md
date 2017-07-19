@@ -19,7 +19,7 @@ First, edit `MOODLE_URL` in your `docker-compose.yml`.
 like this:
 
 ```yaml
-~ snip ~~
+~~ snip ~~
     environment:
       TZ: Asia/Tokyo
       POSTGRES_HOST: moodle_db
@@ -28,7 +28,7 @@ like this:
       POSTGRES_USER: moodle
       PGPASSWORD: moodle
       MOODLE_URL: "http://localhost:8080/moodle" # edit this line!
-~ snip ~~
+~~ snip ~~
 ```
 
 Usually, `MOODLE_URL` sets FQDN of your Docker host.
