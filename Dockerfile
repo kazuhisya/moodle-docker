@@ -26,6 +26,7 @@ RUN apk --update add \
         php7-session \
         php7-simplexml \
         php7-soap \
+        php7-tokenizer \
         php7-xmlreader \
         php7-xmlrpc \
         php7-zip \
