@@ -11,6 +11,7 @@ RUN apk --update add \
         curl \
         php7 \
         php7-apache2 \
+        php7-apcu \
         php7-ctype \
         php7-curl \
         php7-dom \
