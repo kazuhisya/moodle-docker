@@ -1,5 +1,7 @@
 # moodle docker
 
+[![Circle CI](https://circleci.com/gh/kazuhisya/moodle-docker/tree/master.svg?style=shield)](https://circleci.com/gh/kazuhisya/moodle-docker/tree/master)
+
 This repository provides moodle environment for docker compose.
 
 ## System Requirements
