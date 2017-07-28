@@ -25,7 +25,7 @@ services:
       - .data/moodledata:/var/www/moodledata
 
   moodle_db:
-    image: postgres:alpine
+    image: docker.io/postgres:alpine
     environment:
       TZ: Asia/Tokyo
       POSTGRES_PASSWORD: moodle
