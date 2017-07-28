@@ -2,7 +2,7 @@ version: '2'
 services:
 
   moodle:
-    image: kazuhisya:moodle
+    build: .
     links:
       - moodle_db
     environment:
