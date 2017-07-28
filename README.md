@@ -4,6 +4,8 @@
 
 This repository provides moodle environment for docker compose.
 
+The container image is available in the [Docker Hub](https://hub.docker.com/r/kazuhisya/moodle/).
+
 ## System Requirements
 
 - Docker Engine 1.10.0+
@@ -35,11 +37,10 @@ like this:
 
 Usually, `MOODLE_URL` sets FQDN of your Docker host.
 
-Next, you can `build` and `up` (launch).
+Next, you can `up` (launch).
 
 
 ```bash
-$ docker-compose build
 $ docker-compose up -d
 $ docker-compose logs -f moodle  # and wait for the finish output...
 ```
@@ -52,6 +53,17 @@ moodle_1     | first setup done.
 ```
 
 After seeing the finish output, open `http://<docker host>:<port>/` in your browser.
+
+
+## Build own container (optional)
+
+You can use `docker-compose-local.yml`
+
+```bash
+$ docker-compose -f docker-compose-local.yml build
+$ docker-compose -f docker-compose-local.yml up -d
+$ docker-compose logs -f moodle  # and wait for the finish output...
+```
 
 
 ## Disclaimer
