@@ -36,6 +36,7 @@ RUN apk --update add \
         rm -f /var/cache/apk/*
 
 WORKDIR /var/www/localhost/htdocs
+
 RUN curl -OL https://download.moodle.org/${MOODLE_VERSION}/moodle-${MOODLE_TAG}.tgz && \
     tar xf moodle-${MOODLE_TAG}.tgz && \
     rm -rf moodle-${MOODLE_TAG}.tgz
@@ -47,8 +48,8 @@ RUN mkdir -p /var/www/moodledata && \
         -e 's!^(\s*ErrorLog)\s+\S+!\1 /proc/self/fd/2!g' \
         "/etc/apache2/httpd.conf"
 
-COPY config.php /var/www/localhost/htdocs/moodle/config.php
-COPY index.html /var/www/localhost/htdocs/index.html
-COPY start.sh /root/start.sh
+COPY src/config.php /var/www/localhost/htdocs/moodle/config.php
+COPY src/index.html /var/www/localhost/htdocs/index.html
+COPY src/start.sh /root/start.sh
 
 CMD /root/start.sh
