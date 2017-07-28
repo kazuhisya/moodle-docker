@@ -1,0 +1,11 @@
+machine:
+  services:
+    - docker
+dependencies:
+  override:
+    - docker info
+    - docker build -t local/moodle-docker  .
+
+test:
+  override:
+    - docker run -ti local/moodle-docker env
